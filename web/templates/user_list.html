@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ message }}</h1>
+<ul>
+    {% for item in data_list %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+<a>{{ data_list.0 }}</a>
+<a>{{ data_list.1 }}</a>
+<a>{{ data_list.2 }}</a>
+
+<ul>
+    {% for item in information.keys %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<hr/>
+<ul>
+    {% for k,v in information.items %}
+    <li>{{ k }} : {{ v }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
