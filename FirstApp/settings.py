@@ -75,12 +75,28 @@ WSGI_APPLICATION = 'FirstApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'day08',
+        'USER': 'root',
+        'PASSWORD': 'Parav1ew!',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        # 取消外键约束，否则多对多模型迁移报django.db.utils.IntegrityError: (1215, 'Cannot add foreign key constraint')
+        # 'OPTIONS': {
+        #     "init_command": "SET foreign_key_checks = 0;",
+        #     'charset': 'utf8'
+        # },
     }
 }
+
 
 
 # Password validation
